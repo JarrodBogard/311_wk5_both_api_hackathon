@@ -1,20 +1,20 @@
 const express = require('express')
-  const router = express.Router()
+const { getEmployees, getEmployeesById, getEmployeesByFirstName } = require('../controllers/employees')
+const router = express.Router()
+  
 
-  router.get('/', (req, res) => {
+  router.get('/', getEmployees);
 
-    res.send('getting employees')
-  })
+  
+  
 
-  router.get('/:id', (req, res) => {
+  router.get('/:id', getEmployeesById);
 
-    res.send('getting employees id')
-  })
 
-  router.get('firstname/:first_name', (req, res) => {
 
-    res.send('getting employees first names')
-  })
+  router.get('firstname/:first_name', getEmployeesByFirstName);
+
+  
 
 
   module.exports = router
