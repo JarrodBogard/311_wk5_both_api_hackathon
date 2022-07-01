@@ -1,11 +1,8 @@
-require("dotenv").config()
-// console.log(process.env)
-
 const express = require("express")
-const employeesRouter = require('./routers/employees')
 const app = express()
+const employeesRouter = require('./Routes/employees')
 const connection = require("./Sql/connection")
-// console.log(connection)
+
 
 app.use(express.json())
 
