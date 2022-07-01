@@ -1,4 +1,6 @@
-const employees = require('../index')
+// const employees = require('../index')
+const mysql = require("mysql");
+const pool = require("../sql/connection");
 
 
 const getEmployees = (req, res) => {

@@ -1,7 +1,8 @@
 const express = require("express")
-const employeesRouter = require('./routers/employees')
 const app = express()
+const employeesRouter = require('./Routes/employees')
 const connection = require("./Sql/connection")
+
 
 app.use(express.json())
 
