@@ -1,25 +1,14 @@
-require("dotenv").config()
-// console.log(process.env)
-
 const express = require("express")
-const employeesRouter = require('./routers/employees')
+const employeesRouter = require('./Routes/employees')
 const app = express()
-const connection = require("./Sql/connection")
-// console.log(connection)
 
 app.use(express.json())
 
-app.use('/routers', employeesRouter)
+app.use('/employees', employeesRouter)
 
 app.get("/", (req, res) => {
+    console.log("working")
     res.send("hello")
 })
-
-app.get("/employees", (req, res) => {
-    connection.query("SELECT * FROM employees", (err, results) => {
-        res.json(results)
-    })
-})
-
 
 app.listen(process.env.PORT || 3001)
