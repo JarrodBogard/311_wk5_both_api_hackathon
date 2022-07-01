@@ -1,8 +1,11 @@
 const express = require("express")
+const employeesRouter = require('./routers/employees')
 const app = express()
 const connection = require("./Sql/connection")
 
 app.use(express.json())
+
+app.use('/routers', employeesRouter)
 
 app.get("/", (req, res) => {
     res.send("hello")
