@@ -10,7 +10,7 @@ const getEmployees = (req, res) => {
 
 const getEmployeesById = (req, res) => {
   const { id } = req.params;
-
+  
   let sql = "SELECT * FROM ?? Where ?? = ?";
   const replacements = ["employees", "id", id];
   sql = mysql.format(sql, replacements);
@@ -24,12 +24,10 @@ const getEmployeesById = (req, res) => {
 };
 
 const getEmployeesByFirstName = (req, res) => {
-    console.log(req.params)
-    const { first_name } = req.params;
-    console.log({first_name});
-
-  let sql = "SELECT ?? FROM ?? WHERE ?? ";
-  const replacements = ["first_name", "employees", "first_name"];
+  const { first_name } = req.params;
+  
+  let sql = "SELECT * FROM ?? WHERE ?? = ?";
+  const replacements = ["employees", "first_name", first_name];
   sql = mysql.format(sql, replacements);
 
   pool.query(sql, (err, rows) => {

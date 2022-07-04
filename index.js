@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-const employeesRouter = require('./Routes/employees')
+const employeesRouter = require('./routes/employees')
 
 app.use(express.json())
 
