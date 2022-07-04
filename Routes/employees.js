@@ -1,13 +1,17 @@
 const express = require("express");
-const {
-  getEmployees,
-  getEmployeesById,
-  getEmployeesByFirstName,
-} = require("../controllers/employees");
 const router = express.Router();
 
-router.get("/", getEmployees);
-router.get("/:id", getEmployeesById);
-router.get("/:first_name", getEmployeesByFirstName);
+// const {
+//     getEmployees,
+//     getEmployeesById,
+//     getEmployeesByFirstName,
+// } = require("../controllers/employees");
+
+const employeesController = require("../controllers/employees")
+
+router.get("/", employeesController.getEmployees);
+router.get("/:id", employeesController.getEmployeesById);
+router.get("/firstname/:first_name", employeesController.getEmployeesByFirstName);
+
 
 module.exports = router;
