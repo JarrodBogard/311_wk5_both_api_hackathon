@@ -1,13 +1,13 @@
 const express = require("express")
 const app = express()
 const employeesRouter = require('./routes/employees')
-const contactRouter = require('./routes/contact')
+const contactRouter = require('./routes/contacts')
 const addressRouter = require('./routes/address')
 
 app.use(express.json())
 
 app.use('/employees', employeesRouter)
-app.use('/contact', contactRouter)
+app.use('/contacts', contactRouter)
 app.use('/address', addressRouter)
 
 app.get("/", (req, res) => {
